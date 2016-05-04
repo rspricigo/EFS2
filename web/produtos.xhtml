@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Produtos</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h:outputLabel value="Nome: " for="campo-nome"/>
+                <h:inputText id="campo-nome" value="#{produtoBean.produto.nome}"/>
+                
+                <h:outputLabel value="Preco: " for="campo-preco"/>
+                <h:inputText id="campo-preco" value="#{produtoBean.produto.preco}"/>
+                
+                <h:outputLabel for="campo-ie_mostra_preco" value="Mostra Preço: "/>
+                <h:selectBooleanCheckbox id="campo-ie_mostra_preco" value="#{produtoBean.produto.ie_mostra_preco}"/>
+                
+                <h:commandButton value="Adicionar.." action="#{produtoBean.adicionaProduto}"/>
+                
+            </h:form>
+            
+            <h:form>
+                <h:dataTable value="#{produtoBean.produtos}" var="produto"
+                             rendered="#{not empty produtoBean.produtos}">
+                    
+                    <f:facet name="header">Lista de Produtos</f:facet>
+                    <h:column>
+                        <f:facet name="header">Nome</f:facet>
+                        #{produto.nome}
+                    </h:column>
+                    
+                    <h:column>
+                        <f:facet name="header">Preco</f:facet>
+                        <h:outputText value="#{produto.preco}" rendered="#{produto.ie_mostra_preco}"/>
+                        <h:outputText value="Adicione ao carrinho para mostrar o preço" rendered="#{not produto.ie_mostra_preco}"/>
+                    </h:column>
+                    
+                    
+                    
+                </h:dataTable>
+            </h:form>
+
+        </f:view>
+
+    </h:body>
+</html>
+

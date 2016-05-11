@@ -20,5 +20,53 @@
         </session-timeout>
     </session-config>
     
+    <!-- Area protegida -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Somente Admin</web-resource-name>  
+            <url-pattern>/protected/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>ADMIN</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Usuarios e admins</web-resource-name>  
+            <url-pattern>/protected/user/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>ADMIN</role-name>
+            <role-name>USER</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
+    <!-- Validação por Form-->
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/public/login.xhtml</form-login-page>
+            <form-error-page>/public/loginError.xhtml</form-error-page>    
+        </form-login-config>
+    </login-config>
+    
+    <!-- Roles habilitadas -->
+    
+    <security-role>
+        <role-name>ADMIN</role-name>
+    </security-role>
+    <security-role>
+        <role-name>USER</role-name>
+    </security-role>    
+    
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>br.com.filters.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/protected/*</url-pattern>
+    </filter-mapping>
     
 </web-app>

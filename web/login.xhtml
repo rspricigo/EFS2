@@ -9,22 +9,25 @@ and open the template in the editor.
     xmlns:jsf="http://xmlns.jcp.org/jsf">
 
     <head jsf:id="head">
+        <meta charset="UTF-8"/>
         <title>Login</title>
         <script jsf:target="body" jsf:name="app.js"/>
-        <link jsf:name="estilo.css" rel="stylesheet" type="text/css" />
+        <link jsf:name="estilo.css" rel="stylesheet" type="text/css" href="resources/css/estilo.css" />
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"/>
+
     </head>
     <body jsf:id="body">
         <form jsf:id="form" jsf:prependId="false">
             <div>
              <span  class="fa fa-user" aria-hidden="true"></span>   
             <input jsf:id="user" type="text" placeholder="Entre com seu usuário" />
-            </div>
-            <div>
+            
+            
                 <span  class="fa fa-key" aria-hidden="true"></span>
                 <input jsf:id="senha" type="password" placeholder="Entre com a senha" />
+            
+            <button class="button" >Entrar</button>
             </div>
-            <button >Entrar</button>
         </form>
     </body>
 </html>

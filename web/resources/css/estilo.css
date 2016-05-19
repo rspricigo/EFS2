@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19/05/2016, 20:14:18
+    Author     : Guilherme
+*/
+
+.button {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Futura,"Trebuchet MS",Arial,sans-serif;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    background-image: url('searchicon.png');
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-family: Futura,"Trebuchet MS",Arial,sans-serif;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-family: Futura,"Trebuchet MS",Arial,sans-serif;
+}
+
+div {
+    border-radius: 25px;
+    background-color: #f2f2f2;
+    padding: 40px;
+    width: 250px;
+    height: 400px;
+    
+}
